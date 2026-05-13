@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+
+  /* Paleta inspirada no protótipo do Canva da Serra da Canastra */
+  --color-canastra-green-50: #f3f7f1;
+  --color-canastra-green-100: #e2ecdd;
+  --color-canastra-green-200: #c4d9bc;
+  --color-canastra-green-300: #9bbf8e;
+  --color-canastra-green-400: #6fa161;
+  --color-canastra-green-500: #4f8643;
+  --color-canastra-green-600: #3d6a34;
+  --color-canastra-green-700: #2f5328;
+  --color-canastra-green-800: #244020;
+  --color-canastra-green-900: #1c321a;
+
+  --color-canastra-earth-50: #faf6f1;
+  --color-canastra-earth-100: #f0e6d6;
+  --color-canastra-earth-200: #e0c9a8;
+  --color-canastra-earth-300: #c8a67a;
+  --color-canastra-earth-400: #b08456;
+  --color-canastra-earth-500: #946a40;
+  --color-canastra-earth-600: #765432;
+  --color-canastra-earth-700: #5a4027;
+  --color-canastra-earth-800: #422f1d;
+  --color-canastra-earth-900: #2e2114;
+
+  --color-canastra-gold-50: #fdf9ec;
+  --color-canastra-gold-100: #f9efc7;
+  --color-canastra-gold-200: #f3df8a;
+  --color-canastra-gold-300: #ecc94b;
+  --color-canastra-gold-400: #d9aa1f;
+  --color-canastra-gold-500: #b58b14;
+  --color-canastra-gold-600: #8e6c0f;
+  --color-canastra-gold-700: #6d520c;
+
+  --color-canastra-cream: #f7f1e3;
+  --color-canastra-stone: #2b2a26;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-canastra-stone);
+    background-color: var(--color-canastra-cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  /* Compensa o navbar fixo ao rolar para âncoras */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Acessibilidade: respeita usuários que pedem para reduzir movimento */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
