@@ -13,17 +13,15 @@ export function BelasPaisagens() {
       id="paisagens"
       className="relative overflow-hidden bg-canastra-green-800 py-20 text-canastra-cream sm:py-28"
     >
-      {/* Imagem de fundo com overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
+        className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=80&auto=format&fit=crop')",
+          backgroundImage: "url('/images/paisagens/colinas-canastra.png')",
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-b from-canastra-green-900 via-canastra-green-800/85 to-canastra-green-900"
+        className="absolute inset-0 bg-gradient-to-b from-canastra-green-900/80 via-canastra-green-900/50 to-canastra-green-900/95"
         aria-hidden="true"
       />
 

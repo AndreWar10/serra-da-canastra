@@ -9,15 +9,15 @@
  */
 export const videos = {
   cachoeiras: {
-    id: "dQw4w9WgXcQ",
+    id: "KN2euYqC53Q",
     title: "Serra da Canastra — Cachoeira Casca d'Anta",
   },
   gastronomia: {
-    id: "dQw4w9WgXcQ",
+    id: "Y-P6FjaPS0g",
     title: "Serra da Canastra — O paraíso dos queijos",
   },
   salveCanastra: {
-    id: "dQw4w9WgXcQ",
+    id: "R3zzFfi8bFY",
     title: "Salve a Canastra — O lixo urbano chega ao pé da serra",
   },
   documentario: {

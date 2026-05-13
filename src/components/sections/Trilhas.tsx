@@ -48,14 +48,14 @@ export function Trilhas() {
         <Reveal direction="left" delay={0.15} className="flex items-center">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80&auto=format&fit=crop"
-              alt="Trilha entre o cerrado e a vegetação da Serra da Canastra ao amanhecer"
+              src="/images/trilhas/trilha-canastra.png"
+              alt="Cavalgada ao pôr do sol em fazenda da Serra da Canastra, com cavaleiros em trilha de terra cercada por vegetação verde"
               loading="lazy"
               className="h-full w-full object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-canastra-stone/90 to-transparent p-5">
-              <p className="text-xs uppercase tracking-wider text-canastra-cream/70">
-                Foto ilustrativa
+              <p className="text-xs uppercase tracking-wider text-canastra-gold-300">
+                Aventura real
               </p>
               <p className="text-sm font-semibold text-canastra-cream">
                 Trilhas da Serra da Canastra

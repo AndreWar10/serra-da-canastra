@@ -54,6 +54,20 @@ export function ParqueNacional() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.1}>
+          <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl shadow-2xl ring-1 ring-canastra-green-700/40">
+            <img
+              src="/images/parque/cerrado-parque.png"
+              alt="Trilha do Parque Nacional da Serra da Canastra atravessando o Cerrado, com árvores típicas e céu azul"
+              loading="lazy"
+              className="aspect-[16/9] w-full object-cover"
+            />
+            <figcaption className="bg-canastra-stone/80 px-4 py-2 text-xs uppercase tracking-wider text-canastra-cream/70 backdrop-blur-sm">
+              Parque Nacional da Serra da Canastra — vegetação típica do Cerrado
+            </figcaption>
+          </figure>
+        </Reveal>
+
         <div className="mt-12 grid gap-8 lg:grid-cols-5 lg:gap-12">
           <Reveal direction="right" className="lg:col-span-2">
             <div className="space-y-5 text-base leading-relaxed text-canastra-cream/90 sm:text-lg">

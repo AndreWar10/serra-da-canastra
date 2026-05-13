@@ -1,8 +1,7 @@
-import { ArrowRight, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 import { YouTubeEmbed } from "../ui/YouTubeEmbed";
-import { Button } from "../ui/Button";
 import { videos } from "../../data/videos";
 
 export function SalveCanastra() {
@@ -40,20 +39,6 @@ export function SalveCanastra() {
               região, além da falta de conscientização e de políticas eficazes
               para preservação ambiental.
             </p>
-
-            <div className="mt-2">
-              <Button
-                as="a"
-                href="https://www.youtube.com/results?search_query=salve+a+canastra+lixo+urbano"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-                size="lg"
-              >
-                Saiba mais
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
-              </Button>
-            </div>
           </Reveal>
 
           <Reveal direction="left" delay={0.15} className="flex items-center">
