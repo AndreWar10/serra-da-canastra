@@ -138,6 +138,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Serra da Canastra. Trabalho
             acadêmico — fotos e textos meramente ilustrativos.
           </p>
+          <p className="mt-2">Desenvolvido por: Warcode</p>
         </div>
       </div>
     </footer>

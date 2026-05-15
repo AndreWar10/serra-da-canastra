@@ -12,16 +12,13 @@ export const videos = {
     id: "KN2euYqC53Q",
     title: "Serra da Canastra — Cachoeira Casca d'Anta",
   },
-  gastronomia: {
-    id: "Y-P6FjaPS0g",
-    title: "Serra da Canastra — O paraíso dos queijos",
-  },
   salveCanastra: {
     id: "R3zzFfi8bFY",
     title: "Salve a Canastra — O lixo urbano chega ao pé da serra",
   },
   documentario: {
-    id: "dQw4w9WgXcQ",
-    title: "Serra da Canastra — Documentário completo",
+    id: "Y-P6FjaPS0g",
+    title:
+      "Documentário: SERRA DA CANASTRA, o paraíso dos queijos e das cachoeiras!",
   },
 } as const;

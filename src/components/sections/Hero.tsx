@@ -44,11 +44,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-canastra-cream/90 sm:text-lg md:text-xl lg:max-w-[44rem] lg:text-justify lg:[text-align-last:justify]"
+          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-canastra-cream/90 sm:text-lg md:text-xl lg:max-w-full"
         >
           Natureza, cultura e sabores típicos criam uma experiência autêntica
-          mineira. Cachoeiras, trilhas e o legítimo Queijo Canastra esperam por
-          você.
+          mineira.{" "}
+          <br className="hidden lg:block" aria-hidden="true" />
+          Cachoeiras, trilhas e o legítimo Queijo Canastra esperam por você.
         </motion.p>
 
         <motion.div

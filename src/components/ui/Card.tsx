@@ -23,7 +23,7 @@ type CardImageProps = {
 
 export function CardImage({ src, alt, className = "" }: CardImageProps) {
   return (
-    <div className="relative overflow-hidden aspect-[4/3]">
+    <div className="relative aspect-[4/3] shrink-0 overflow-hidden">
       <img
         src={src}
         alt={alt}

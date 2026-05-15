@@ -1,17 +1,34 @@
 import { Reveal } from "../ui/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
-import { YouTubeEmbed } from "../ui/YouTubeEmbed";
-import { videos } from "../../data/videos";
+
+const GASTRONOMIA_VIDEO_SRC = "/videos/gastronomia.mp4";
+
+const GASTRONOMIA_VIDEO_CAPTION =
+  "SERRA DA CANASTRA, o paraíso dos queijos e das cachoeiras! | Documentário";
 
 export function Gastronomia() {
   return (
     <section id="gastronomia" className="bg-canastra-earth-50 py-20 sm:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <Reveal direction="left" className="order-2 flex items-center lg:order-1">
-          <YouTubeEmbed
-            videoId={videos.gastronomia.id}
-            title={videos.gastronomia.title}
-          />
+          <figure className="m-0 w-full">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-canastra-stone shadow-2xl">
+              <video
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                aria-label={GASTRONOMIA_VIDEO_CAPTION}
+              >
+                <source src={GASTRONOMIA_VIDEO_SRC} type="video/mp4" />
+              </video>
+            </div>
+            <figcaption className="mt-3 text-center text-xs font-medium leading-snug text-canastra-stone/75 sm:text-sm lg:text-left">
+              {GASTRONOMIA_VIDEO_CAPTION}
+            </figcaption>
+          </figure>
         </Reveal>
 
         <Reveal

@@ -5,9 +5,15 @@ import { YouTubeEmbed } from "../ui/YouTubeEmbed";
 import { Button } from "../ui/Button";
 import { videos } from "../../data/videos";
 
+const DOCUMENTARIO_CAPTION =
+  "Documentário: SERRA DA CANASTRA, o paraíso dos queijos e das cachoeiras! |";
+
 export function Localizacao() {
   return (
-    <section className="bg-canastra-green-900 py-20 text-canastra-cream sm:py-28">
+    <section
+      id="localizacao"
+      className="bg-canastra-green-900 py-20 text-canastra-cream sm:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionTitle eyebrow="Como chegar" align="center" variant="light">
@@ -54,10 +60,15 @@ export function Localizacao() {
           </Reveal>
 
           <Reveal direction="left" delay={0.15} className="flex items-center">
-            <YouTubeEmbed
-              videoId={videos.documentario.id}
-              title={videos.documentario.title}
-            />
+            <figure className="m-0 w-full">
+              <YouTubeEmbed
+                videoId={videos.documentario.id}
+                title={videos.documentario.title}
+              />
+              <figcaption className="mt-3 text-center text-xs font-medium leading-snug text-canastra-cream/75 sm:text-sm">
+                {DOCUMENTARIO_CAPTION}
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </div>

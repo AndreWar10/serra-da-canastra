@@ -2,16 +2,8 @@ import { ArrowUpRight, Route } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Card, CardImage, CardBody } from "../ui/Card";
+import { MobileCarousel } from "../ui/MobileCarousel";
 import { pontosTuristicos } from "../../data/pontosTuristicos";
-
-const fallbackImages: Record<string, string> = {
-  "igreja-itajai":
-    "https://images.unsplash.com/photo-1548625149-fc4a29cf7092?w=900&q=80&auto=format&fit=crop",
-  "queijaria-vale-guirita":
-    "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=900&q=80&auto=format&fit=crop",
-  "caminho-do-ceu":
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80&auto=format&fit=crop",
-};
 
 export function PontosTuristicos() {
   return (
@@ -29,19 +21,26 @@ export function PontosTuristicos() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <MobileCarousel
+          ariaLabel="Pontos do roteiro — deslize para o lado ou use as setas"
+          scrollClassName="mt-10 -mx-4 flex flex-nowrap items-stretch gap-6 overflow-x-auto scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
+        >
           {pontosTuristicos.map((ponto, idx) => (
-            <Reveal key={ponto.id} delay={idx * 0.1}>
-              <Card>
+            <Reveal
+              key={ponto.id}
+              delay={idx * 0.1}
+              className="flex w-[min(90vw,23rem)] shrink-0 snap-center flex-col max-sm:h-[28rem] sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
+            >
+              <Card className="flex h-full min-h-0 flex-col overflow-hidden max-sm:h-full sm:h-full">
                 <CardImage
-                  src={fallbackImages[ponto.id] ?? ponto.imagem}
+                  src={ponto.imagem}
                   alt={ponto.nome}
                 />
-                <CardBody className="flex h-full flex-col gap-3">
+                <CardBody className="flex min-h-0 flex-1 flex-col gap-3 max-sm:overflow-y-auto">
                   <h3 className="font-display text-2xl text-canastra-green-800">
                     {ponto.nome}
                   </h3>
-                  <p className="flex-1 text-sm leading-relaxed text-canastra-stone/80">
+                  <p className="max-sm:flex-none flex-1 text-sm leading-relaxed text-canastra-stone/80">
                     {ponto.descricao}
                   </p>
                   <a
@@ -57,7 +56,7 @@ export function PontosTuristicos() {
               </Card>
             </Reveal>
           ))}
-        </div>
+        </MobileCarousel>
       </div>
     </section>
   );

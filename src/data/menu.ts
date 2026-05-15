@@ -11,4 +11,5 @@ export const menuItems: MenuItem[] = [
   { id: "trilhas", label: "Trilhas", href: "#trilhas" },
   { id: "parque", label: "Parque Nacional", href: "#parque" },
   { id: "hospedagens", label: "Hospedagens", href: "#hospedagens" },
+  { id: "localizacao", label: "Localização", href: "#localizacao" },
 ];

@@ -2,19 +2,9 @@ import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Card, CardImage, CardBody } from "../ui/Card";
+import { MobileCarousel } from "../ui/MobileCarousel";
 import { Button } from "../ui/Button";
 import { hospedagens } from "../../data/hospedagens";
-
-const fallbackImages: Record<string, string> = {
-  "vale-do-ceu":
-    "https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=1000&q=80&auto=format&fit=crop",
-  passaredo:
-    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1000&q=80&auto=format&fit=crop",
-  "chales-marisa":
-    "https://images.unsplash.com/photo-1518602164578-cd0074062767?w=1000&q=80&auto=format&fit=crop",
-  "casa-campo":
-    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1000&q=80&auto=format&fit=crop",
-};
 
 export function Hospedagens() {
   return (
@@ -33,20 +23,27 @@ export function Hospedagens() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+        <MobileCarousel
+          ariaLabel="Hospedagens — deslize para o lado ou use as setas"
+          scrollClassName="mt-12 -mx-4 flex flex-nowrap items-stretch gap-6 overflow-x-auto scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-2 xl:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+        >
           {hospedagens.map((hosp, idx) => (
-            <Reveal key={hosp.id} delay={idx * 0.08}>
-              <Card className="flex h-full flex-col">
+            <Reveal
+              key={hosp.id}
+              delay={idx * 0.08}
+              className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col max-sm:h-[32rem] sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
+            >
+              <Card className="flex h-full min-h-0 flex-col overflow-hidden max-sm:h-full sm:h-full">
                 <CardImage
-                  src={fallbackImages[hosp.id] ?? hosp.imagem}
+                  src={hosp.imagem}
                   alt={hosp.nome}
                 />
-                <CardBody className="flex flex-1 flex-col gap-4">
+                <CardBody className="flex min-h-0 flex-1 flex-col gap-4 max-sm:overflow-y-auto">
                   <h3 className="font-display text-xl leading-tight text-canastra-green-800">
                     {hosp.nome}
                   </h3>
 
-                  <ul className="flex flex-1 flex-col gap-2 text-xs text-canastra-stone/80 sm:text-sm">
+                  <ul className="flex max-sm:flex-none flex-1 flex-col gap-2 text-xs text-canastra-stone/80 sm:text-sm">
                     <li className="flex items-start gap-2">
                       <MapPin
                         className="mt-0.5 h-4 w-4 flex-shrink-0 text-canastra-green-600"
@@ -99,7 +96,7 @@ export function Hospedagens() {
               </Card>
             </Reveal>
           ))}
-        </div>
+        </MobileCarousel>
       </div>
     </section>
   );

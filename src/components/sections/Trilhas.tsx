@@ -2,6 +2,9 @@ import { Reveal } from "../ui/Reveal";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Footprints, Car, Binoculars, Waves } from "lucide-react";
 
+const TRILHAS_IMAGE_CAPTION =
+  "Trilhas da Serra da Canastra. Foto: Divulgação.- turismodenatureza.com.br";
+
 const atividades = [
   { icon: Footprints, label: "Trilhas e trekking" },
   { icon: Car, label: "Passeios de 4x4" },
@@ -46,22 +49,19 @@ export function Trilhas() {
         </Reveal>
 
         <Reveal direction="left" delay={0.15} className="flex items-center">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-2xl">
-            <img
-              src="/images/trilhas/trilha-canastra.png"
-              alt="Cavalgada ao pôr do sol em fazenda da Serra da Canastra, com cavaleiros em trilha de terra cercada por vegetação verde"
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-canastra-stone/90 to-transparent p-5">
-              <p className="text-xs uppercase tracking-wider text-canastra-gold-300">
-                Aventura real
-              </p>
-              <p className="text-sm font-semibold text-canastra-cream">
-                Trilhas da Serra da Canastra
-              </p>
+          <figure className="m-0 w-full">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/images/trilhas/trilha-canastra.png"
+                alt="Grupo de trilheiros em descida por trecho rochoso na Serra da Canastra, com vale verde e chapada ao fundo sob céu nublado"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
             </div>
-          </div>
+            <figcaption className="mt-3 text-center text-xs font-medium leading-snug text-canastra-stone/75 sm:text-sm lg:text-left">
+              {TRILHAS_IMAGE_CAPTION}
+            </figcaption>
+          </figure>
         </Reveal>
       </div>
     </section>

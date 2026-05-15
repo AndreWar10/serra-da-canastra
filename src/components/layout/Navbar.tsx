@@ -30,27 +30,33 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${navBg}`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-w-0 max-w-7xl flex-nowrap items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:gap-3 lg:px-4 xl:gap-4 xl:px-8">
         <a
           href="#hero"
-          className="flex items-center gap-2 text-canastra-cream"
+          className="flex shrink-0 items-center gap-1.5 text-canastra-cream sm:gap-2"
           aria-label="Serra da Canastra — voltar ao topo"
         >
-          <Mountain className="h-7 w-7 text-canastra-gold-300" aria-hidden="true" />
-          <span className="font-display text-xl tracking-wider sm:text-2xl">
+          <Mountain
+            className="h-6 w-6 shrink-0 text-canastra-gold-300 xl:h-7 xl:w-7"
+            aria-hidden="true"
+          />
+          <span className="font-display text-lg tracking-wider sm:text-xl xl:text-2xl">
             Serra da Canastra
           </span>
         </a>
 
-        <nav className="hidden lg:block" aria-label="Navegação principal">
-          <ul className="flex items-center gap-1">
+        <nav
+          className="hidden min-w-0 flex-1 lg:block"
+          aria-label="Navegação principal"
+        >
+          <ul className="flex flex-nowrap items-center justify-end gap-0">
             {menuItems.map((item) => {
               const isActive = activeId === item.id;
               return (
-                <li key={item.id}>
+                <li key={item.id} className="shrink-0">
                   <a
                     href={item.href}
-                    className={`relative rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
+                    className={`relative whitespace-nowrap rounded-full px-2 py-2 text-xs font-semibold uppercase tracking-wide transition-colors xl:px-3 xl:text-sm xl:tracking-wider ${
                       isActive
                         ? "text-canastra-gold-300"
                         : "text-canastra-cream hover:text-canastra-gold-300"
@@ -59,7 +65,7 @@ export function Navbar() {
                     {item.label}
                     {isActive ? (
                       <span
-                        className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-canastra-gold-300"
+                        className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-canastra-gold-300 xl:inset-x-3"
                         aria-hidden="true"
                       />
                     ) : null}
@@ -73,7 +79,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="rounded-full p-2 text-canastra-cream lg:hidden"
+          className="shrink-0 rounded-full p-2 text-canastra-cream lg:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
         >

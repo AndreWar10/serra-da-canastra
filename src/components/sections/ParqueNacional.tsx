@@ -44,8 +44,8 @@ export function ParqueNacional() {
             <span className="inline-flex items-center gap-2 rounded-full bg-canastra-green-700/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-canastra-gold-300">
               <Leaf className="h-3 w-3" aria-hidden="true" /> Preservação eco
             </span>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-tight text-canastra-cream sm:text-6xl md:text-7xl">
-              Parque <span className="text-canastra-gold-300">Nacional</span>
+            <h2 className="mt-4 font-display text-5xl uppercase leading-tight text-white sm:text-6xl md:text-7xl">
+              Parque Nacional
             </h2>
             <span
               className="mx-auto mt-3 block h-1 w-20 rounded-full bg-canastra-gold-300"
@@ -58,7 +58,7 @@ export function ParqueNacional() {
           <figure className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl shadow-2xl ring-1 ring-canastra-green-700/40">
             <img
               src="/images/parque/cerrado-parque.png"
-              alt="Trilha do Parque Nacional da Serra da Canastra atravessando o Cerrado, com árvores típicas e céu azul"
+              alt="Trilha de pedras no Cerrado da Serra da Canastra, com capim dourado, árvores retorcidas e céu azul"
               loading="lazy"
               className="aspect-[16/9] w-full object-cover"
             />
