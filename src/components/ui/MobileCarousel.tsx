@@ -46,11 +46,45 @@ export function MobileCarousel({
     };
   }, [updateArrows]);
 
+  /** Índice do slide cujo centro está mais próximo do centro do viewport (alinhado a snap-center). */
+  const indexNearestCenter = (el: HTMLDivElement) => {
+    const children = Array.from(el.children) as HTMLElement[];
+    if (children.length === 0) return 0;
+    const portCenter = el.getBoundingClientRect().left + el.clientWidth / 2;
+    let best = 0;
+    let bestDist = Infinity;
+    children.forEach((child, i) => {
+      const r = child.getBoundingClientRect();
+      const dist = Math.abs(r.left + r.width / 2 - portCenter);
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = i;
+      }
+    });
+    return best;
+  };
+
+  /** scrollLeft que centraliza o filho no eixo X (compatível com snap-center no iOS). */
+  const scrollLeftToCenterChild = (el: HTMLDivElement, child: HTMLElement) => {
+    const cRect = el.getBoundingClientRect();
+    const chRect = child.getBoundingClientRect();
+    const delta =
+      chRect.left + chRect.width / 2 - (cRect.left + cRect.width / 2);
+    const max = el.scrollWidth - el.clientWidth;
+    return Math.max(0, Math.min(el.scrollLeft + delta, max));
+  };
+
   const scrollByPage = (dir: -1 | 1) => {
     const el = ref.current;
     if (!el) return;
-    const step = Math.min(el.clientWidth * 0.82, 340);
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
+    const children = Array.from(el.children) as HTMLElement[];
+    if (children.length === 0) return;
+
+    const from = indexNearestCenter(el);
+    const to = Math.min(Math.max(from + dir, 0), children.length - 1);
+    const target = scrollLeftToCenterChild(el, children[to]!);
+    // `smooth` + snap-mandatory no Safari costuma parar entre slides; nas setas usamos instantâneo.
+    el.scrollTo({ left: Math.round(target), behavior: "auto" });
   };
 
   return (
