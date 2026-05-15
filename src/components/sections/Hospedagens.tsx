@@ -25,25 +25,25 @@ export function Hospedagens() {
 
         <MobileCarousel
           ariaLabel="Hospedagens — deslize para o lado ou use as setas"
-          scrollClassName="mt-12 -mx-4 flex flex-nowrap items-stretch gap-6 overflow-x-auto scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-2 xl:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+          scrollClassName="mt-12 -mx-4 flex flex-nowrap items-start gap-6 overflow-x-auto overflow-y-hidden touch-pan-x scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:touch-auto sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-2 xl:grid-cols-4 [&::-webkit-scrollbar]:hidden"
         >
           {hospedagens.map((hosp, idx) => (
             <Reveal
               key={hosp.id}
               delay={idx * 0.08}
-              className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col max-sm:h-[32rem] sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
+              className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
             >
-              <Card className="flex h-full min-h-0 flex-col overflow-hidden max-sm:h-full sm:h-full">
+              <Card className="flex flex-col sm:h-full">
                 <CardImage
                   src={hosp.imagem}
                   alt={hosp.nome}
                 />
-                <CardBody className="flex min-h-0 flex-1 flex-col gap-4 max-sm:overflow-y-auto">
+                <CardBody className="flex flex-col gap-4 sm:min-h-0 sm:flex-1">
                   <h3 className="font-display text-xl leading-tight text-canastra-green-800">
                     {hosp.nome}
                   </h3>
 
-                  <ul className="flex max-sm:flex-none flex-1 flex-col gap-2 text-xs text-canastra-stone/80 sm:text-sm">
+                  <ul className="flex flex-col gap-2 text-xs text-canastra-stone/80 sm:flex-1 sm:text-sm">
                     <li className="flex items-start gap-2">
                       <MapPin
                         className="mt-0.5 h-4 w-4 flex-shrink-0 text-canastra-green-600"

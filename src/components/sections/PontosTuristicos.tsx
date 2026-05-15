@@ -23,24 +23,24 @@ export function PontosTuristicos() {
 
         <MobileCarousel
           ariaLabel="Pontos do roteiro — deslize para o lado ou use as setas"
-          scrollClassName="mt-10 -mx-4 flex flex-nowrap items-stretch gap-6 overflow-x-auto scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
+          scrollClassName="mt-10 -mx-4 flex flex-nowrap items-start gap-6 overflow-x-auto overflow-y-hidden touch-pan-x scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:touch-auto sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
         >
           {pontosTuristicos.map((ponto, idx) => (
             <Reveal
               key={ponto.id}
               delay={idx * 0.1}
-              className="flex w-[min(90vw,23rem)] shrink-0 snap-center flex-col max-sm:h-[28rem] sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
+              className="flex w-[min(90vw,23rem)] shrink-0 snap-center flex-col sm:h-auto sm:min-h-0 sm:w-auto sm:shrink"
             >
-              <Card className="flex h-full min-h-0 flex-col overflow-hidden max-sm:h-full sm:h-full">
+              <Card className="flex flex-col sm:h-full">
                 <CardImage
                   src={ponto.imagem}
                   alt={ponto.nome}
                 />
-                <CardBody className="flex min-h-0 flex-1 flex-col gap-3 max-sm:overflow-y-auto">
+                <CardBody className="flex flex-col gap-3 sm:min-h-0 sm:flex-1">
                   <h3 className="font-display text-2xl text-canastra-green-800">
                     {ponto.nome}
                   </h3>
-                  <p className="max-sm:flex-none flex-1 text-sm leading-relaxed text-canastra-stone/80">
+                  <p className="text-sm leading-relaxed text-canastra-stone/80 sm:flex-1">
                     {ponto.descricao}
                   </p>
                   <a
