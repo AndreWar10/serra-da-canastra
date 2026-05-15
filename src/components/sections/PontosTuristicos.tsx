@@ -23,7 +23,7 @@ export function PontosTuristicos() {
 
         <MobileCarousel
           ariaLabel="Pontos do roteiro — deslize para o lado ou use as setas"
-          scrollClassName="mt-10 -mx-4 grid grid-flow-col auto-cols-[min(90vw,23rem)] grid-rows-1 items-stretch gap-6 overflow-x-auto overflow-y-hidden touch-pan-x scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:auto-cols-auto sm:grid-flow-row sm:touch-auto sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
+          scrollClassName="mt-10 -mx-4 grid grid-flow-col auto-cols-[min(90vw,23rem)] grid-rows-1 items-stretch gap-6 overflow-x-auto overflow-y-hidden scroll-smooth px-4 pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:auto-cols-auto sm:grid-flow-row sm:items-stretch sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden"
         >
           {pontosTuristicos.map((ponto, idx) => (
             <Reveal
